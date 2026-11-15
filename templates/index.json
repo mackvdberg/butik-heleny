@@ -1,1 +1,553 @@
-{"sections":{"1790691936f2880f04":{"type":"_blocks","blocks":{"ai_gen_block_06912cd_whbtLd":{"type":"ai_gen_block_06912cd","name":"Aangepaste Liquid","disabled":true,"settings":{"custom_liquid":"<style>\n  .susans-countdown-bar {\n    width: 100%;\n    background: #07321E;\n    color: #FFFFFF;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 44px;\n    padding: 5px 12px;\n    box-sizing: border-box;\n  }\n\n  .susans-countdown-inner {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 12px;\n    white-space: nowrap;\n  }\n\n  .susans-countdown-title {\n    font-size: 12px;\n    font-weight: 700;\n    letter-spacing: 2px;\n    text-transform: uppercase;\n    line-height: 1;\n  }\n\n  .susans-countdown-time {\n    display: flex;\n    align-items: flex-start;\n    gap: 4px;\n  }\n\n  .susans-time-unit {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    min-width: 29px;\n  }\n\n  .susans-time-number {\n    font-size: 21px;\n    font-weight: 700;\n    letter-spacing: 0.5px;\n    line-height: 19px;\n  }\n\n  .susans-time-label {\n    margin-top: 3px;\n    font-size: 6px;\n    font-weight: 600;\n    letter-spacing: 0.7px;\n    text-transform: uppercase;\n    line-height: 1;\n    opacity: 0.95;\n  }\n\n  .susans-time-colon {\n    font-size: 19px;\n    font-weight: 700;\n    line-height: 18px;\n  }\n\n  @media screen and (max-width: 749px) {\n    .susans-countdown-bar {\n      min-height: 40px;\n      padding: 4px 8px;\n    }\n\n    .susans-countdown-inner {\n      gap: 9px;\n    }\n\n    .susans-countdown-title {\n      font-size: 10px;\n      letter-spacing: 1.6px;\n    }\n\n    .susans-time-number {\n      font-size: 19px;\n    }\n\n    .susans-time-colon {\n      font-size: 17px;\n    }\n\n    .susans-time-unit {\n      min-width: 27px;\n    }\n  }\n<\/style>\n\n<div class=\"susans-countdown-bar\">\n  <div class=\"susans-countdown-inner\">\n\n    <div class=\"susans-countdown-title\">\n      Sale Ends In\n    <\/div>\n\n    <div class=\"susans-countdown-time\">\n\n      <div class=\"susans-time-unit\">\n        <span class=\"susans-time-number\" id=\"susans-hours\">00<\/span>\n        <span class=\"susans-time-label\">HRS<\/span>\n      <\/div>\n\n      <span class=\"susans-time-colon\">:<\/span>\n\n      <div class=\"susans-time-unit\">\n        <span class=\"susans-time-number\" id=\"susans-minutes\">00<\/span>\n        <span class=\"susans-time-label\">MINS<\/span>\n      <\/div>\n\n      <span class=\"susans-time-colon\">:<\/span>\n\n      <div class=\"susans-time-unit\">\n        <span class=\"susans-time-number\" id=\"susans-seconds\">00<\/span>\n        <span class=\"susans-time-label\">SECS<\/span>\n      <\/div>\n\n    <\/div>\n\n  <\/div>\n<\/div>\n\n<script>\n(function() {\n\n  function getNextMidnight() {\n    const now = new Date();\n\n    const midnight = new Date(\n      now.getFullYear(),\n      now.getMonth(),\n      now.getDate() + 1,\n      0,\n      0,\n      0,\n      0\n    );\n\n    return midnight.getTime();\n  }\n\n  let targetTime = getNextMidnight();\n\n  function updateSusansCountdown() {\n    const now = new Date().getTime();\n    let distance = targetTime - now;\n\n    if (distance <= 0) {\n      targetTime = getNextMidnight();\n      distance = targetTime - now;\n    }\n\n    const hours = Math.floor(\n      distance \/ (1000 * 60 * 60)\n    );\n\n    const minutes = Math.floor(\n      (distance % (1000 * 60 * 60)) \/ (1000 * 60)\n    );\n\n    const seconds = Math.floor(\n      (distance % (1000 * 60)) \/ 1000\n    );\n\n    const hoursEl = document.getElementById('susans-hours');\n    const minutesEl = document.getElementById('susans-minutes');\n    const secondsEl = document.getElementById('susans-seconds');\n\n    if (hoursEl) {\n      hoursEl.textContent = String(hours).padStart(2, '0');\n    }\n\n    if (minutesEl) {\n      minutesEl.textContent = String(minutes).padStart(2, '0');\n    }\n\n    if (secondsEl) {\n      secondsEl.textContent = String(seconds).padStart(2, '0');\n    }\n  }\n\n  updateSusansCountdown();\n  setInterval(updateSusansCountdown, 1000);\n\n})();\n<\/script>","desktop_width_percent":100},"blocks":{}},"ai_gen_block_06912cd_Pgy6Ed":{"type":"ai_gen_block_06912cd","disabled":true,"settings":{"custom_liquid":"<style>\n  .susans-collection-nav {\n    position: relative;\n    width: 100%;\n    background: #FFFFFF;\n    border-top: 1px solid rgba(208, 208, 208, 0.40);\n    border-bottom: 1px solid rgba(208, 208, 208, 0.40);\n    overflow: hidden;\n    box-sizing: border-box;\n  }\n\n  .susans-collection-nav__track {\n    width: 100%;\n    max-width: 1400px;\n    min-height: 46px;\n    margin: 0 auto;\n    padding: 0 30px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 16px;\n    box-sizing: border-box;\n    white-space: nowrap;\n  }\n\n  .susans-collection-nav__link {\n    position: relative;\n    flex: 0 0 auto;\n    min-height: 46px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #1F1F1F !important;\n    text-decoration: none !important;\n    text-transform: uppercase;\n    font-family: 'Outfit', sans-serif;\n    font-size: 11px;\n    font-weight: 600;\n    letter-spacing: 0.8px;\n    line-height: 1;\n    transition: opacity 0.2s ease;\n  }\n\n  .susans-collection-nav__link:hover {\n    opacity: 0.62;\n  }\n\n  \/* Wyróżnione kolekcje *\/\n  .susans-collection-nav__link--featured {\n    color: #4A382B !important;\n    font-weight: 700;\n  }\n\n  \/* Aktywna kolekcja *\/\n  .susans-collection-nav__link.is-active {\n    font-weight: 700;\n  }\n\n  .susans-collection-nav__link.is-active::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: 7px;\n    height: 1px;\n    background: #1F1F1F;\n  }\n\n  .susans-collection-nav__link--featured.is-active::after {\n    background: #4A382B;\n  }\n\n  .susans-collection-nav__arrow {\n    display: none;\n  }\n\n  \/* Tablety i mniejsze ekrany komputerów *\/\n  @media screen and (max-width: 1280px) {\n    .susans-collection-nav__track {\n      max-width: none;\n      min-height: 40px;\n      justify-content: flex-start;\n      gap: 25px;\n      padding: 0 42px 0 48px;\n      overflow-x: auto;\n      scroll-behavior: smooth;\n      scrollbar-width: none;\n      -ms-overflow-style: none;\n    }\n\n    .susans-collection-nav__track::-webkit-scrollbar {\n      display: none;\n    }\n\n    .susans-collection-nav__link {\n      min-height: 40px;\n      font-size: 10.5px;\n      letter-spacing: 0.9px;\n    }\n\n    .susans-collection-nav__link.is-active::after {\n      bottom: 5px;\n    }\n\n    .susans-collection-nav__arrow {\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      z-index: 10;\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 0;\n      margin: 0;\n      border: 0;\n      background: #FFFFFF;\n      color: #1F1F1F;\n      font-family: Arial, sans-serif;\n      font-size: 18px;\n      font-weight: 300;\n      line-height: 1;\n      cursor: pointer;\n    }\n\n    .susans-collection-nav__arrow--left {\n      left: 0;\n      box-shadow: 9px 0 14px #FFFFFF;\n    }\n\n    .susans-collection-nav__arrow--right {\n      right: 0;\n      box-shadow: -9px 0 14px #FFFFFF;\n    }\n  }\n\n  \/* Urządzenia mobilne *\/\n  @media screen and (max-width: 749px) {\n    .susans-collection-nav__track {\n      min-height: 37px;\n      gap: 21px;\n      padding: 0 36px 0 44px;\n    }\n\n    .susans-collection-nav__link {\n      min-height: 37px;\n      font-size: 10px;\n      letter-spacing: 0.8px;\n    }\n\n    .susans-collection-nav__link.is-active::after {\n      bottom: 4px;\n    }\n\n    .susans-collection-nav__arrow {\n      width: 29px;\n      font-size: 17px;\n    }\n  }\n<\/style>\n\n<div class=\"susans-collection-nav\">\n\n  <!-- Strzałka w lewo -->\n  <button\n    type=\"button\"\n    class=\"susans-collection-nav__arrow susans-collection-nav__arrow--left\"\n    aria-label=\"Przewiń kolekcje w lewo\"\n    onclick=\"this.parentElement.querySelector('.susans-collection-nav__track').scrollBy({ left: -280, behavior: 'smooth' })\"\n  >\n    ‹\n  <\/button>\n\n  <!-- Nawigacja po kolekcjach -->\n  <nav class=\"susans-collection-nav__track\" aria-label=\"Przeglądaj kolekcje\">\n\n    <!-- Najczęściej wybierane -->\n    <a href=\"\/collections\/most-loved\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'most-loved' %} is-active{% endif %}\">\n      Najczęściej Wybierane\n    <\/a>\n\n    <!-- Kardigany i swetry -->\n    <a href=\"\/collections\/cardigans-sweaters\"\n       class=\"susans-collection-nav__link susans-collection-nav__link--featured{% if collection.handle == 'cardigans-sweaters' %} is-active{% endif %}\">\n      Kardigany i Swetry\n    <\/a>\n\n    <!-- Przytulne poncza -->\n    <a href=\"\/collections\/cozy-poncho-sweaters\"\n       class=\"susans-collection-nav__link susans-collection-nav__link--featured{% if collection.handle == 'cozy-poncho-sweaters' %} is-active{% endif %}\">\n      Ciepłe Poncza\n    <\/a>\n\n    <!-- Jesienne bluzy -->\n    <a href=\"\/collections\/autumn-hoodies\"\n       class=\"susans-collection-nav__link susans-collection-nav__link--featured{% if collection.handle == 'autumn-hoodies' %} is-active{% endif %}\">\n      Jesienne Bluzy\n    <\/a>\n\n    <!-- Płaszcze i kurtki -->\n    <a href=\"\/collections\/coats-jackets\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'coats-jackets' %} is-active{% endif %}\">\n      Płaszcze i Kurtki\n    <\/a>\n\n    <!-- Marynarki -->\n    <a href=\"\/collections\/blazers\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'blazers' %} is-active{% endif %}\">\n      Marynarki\n    <\/a>\n\n    <!-- Torebki -->\n    <a href=\"\/collections\/bags\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'bags' %} is-active{% endif %}\">\n      Torebki\n    <\/a>\n\n    <!-- Akcesoria -->\n    <a href=\"\/collections\/accessories\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'accessories' %} is-active{% endif %}\">\n      Akcesoria\n    <\/a>\n\n    <!-- Na co dzień -->\n    <a href=\"\/collections\/the-everyday-edit\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'the-everyday-edit' %} is-active{% endif %}\">\n      Stylizacje na Co Dzień\n    <\/a>\n\n  <\/nav>\n\n  <!-- Strzałka w prawo -->\n  <button\n    type=\"button\"\n    class=\"susans-collection-nav__arrow susans-collection-nav__arrow--right\"\n    aria-label=\"Przewiń kolekcje w prawo\"\n    onclick=\"this.parentElement.querySelector('.susans-collection-nav__track').scrollBy({ left: 280, behavior: 'smooth' })\"\n  >\n    ›\n  <\/button>\n\n<\/div>","desktop_width_percent":100},"blocks":{}}},"block_order":["ai_gen_block_06912cd_whbtLd","ai_gen_block_06912cd_Pgy6Ed"],"settings":{}},"slideshow_XGpN3P":{"type":"slideshow","blocks":{"image_qmNkGY":{"type":"image","settings":{"top_subheading":"","title":"","title_size":80,"subheading":"","link":"shopify:\/\/collections\/all","link_text":"","link_2":"","link_text_2":"","color_accent":"#00b67b","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/business-woman-in-city.jpg","overlay_opacity":0,"focal_point":"center center"}}},"block_order":["image_qmNkGY"],"settings":{"section_height":"natural","mobile_height":"auto","parallax":false,"style":"bars","autoplay":false,"autoplay_speed":5}},"blocks_gU6GJr":{"type":"_blocks","blocks":{"ai_gen_block_5a00a50_JPzTkC":{"type":"ai_gen_block_5a00a50","settings":{"custom_liquid":"<a href=\"\/collections\/all\" class=\"susans-collection-button\">\n  ZOBACZ WSZYSTKIE PRODUKTY\n  <span aria-hidden=\"true\">→<\/span>\n<\/a>\n\n<style>\n  .susans-collection-button {\n    width: 100%;\n    min-height: 38px;\n    padding: 9px 18px;\n    box-sizing: border-box;\n\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n\n    background: #4A382B;\n    color: #FFFFFF !important;\n\n    font-family: 'Outfit', sans-serif;\n    font-size: 11px;\n    font-weight: 700;\n    letter-spacing: 1.4px;\n    text-transform: uppercase;\n    text-decoration: none !important;\n\n    border: 1px solid #4A382B;\n    transition:\n      background-color 0.2s ease,\n      color 0.2s ease;\n  }\n\n  .susans-collection-button:hover {\n    background: #604B3B;\n    color: #FFFFFF !important;\n  }\n\n  .susans-collection-button span {\n    font-size: 15px;\n    line-height: 1;\n    transition: transform 0.2s ease;\n  }\n\n  .susans-collection-button:hover span {\n    transform: translateX(3px);\n  }\n\n  @media screen and (max-width: 749px) {\n    .susans-collection-button {\n      min-height: 36px;\n      padding: 8px 14px;\n      font-size: 10px;\n      letter-spacing: 1.2px;\n    }\n\n    .susans-collection-button span {\n      font-size: 14px;\n    }\n  }\n<\/style>","desktop_width_percent":100},"blocks":{}}},"block_order":["ai_gen_block_5a00a50_JPzTkC"],"name":"Custom liquid","settings":{}},"rich_text_Agx4tL":{"type":"rich-text","blocks":{"heading_QMtiTP":{"type":"heading","settings":{"title":"JESIENNA WYPRZEDAŻ"}},"text_UJf3Qd":{"type":"text","settings":{"enlarge_text":false,"text":"<p>Kiedy Helena zakładała&nbsp;<strong>Butik Heleny Kraków<\/strong>, marzyła o stworzeniu miejsca, w którym każda kobieta znajdzie ponadczasową modę, łączącą elegancję z wygodą.<\/p><p>Dzięki zaufaniu i wsparciu naszych Klientek to marzenie stało się rzeczywistością.<\/p><p>Dziś, inspirowani urokiem Krakowa, świętujemy jesień kolekcją pełną&nbsp;<strong>ciepłych swetrów, eleganckich płaszczy i ponadczasowych fasonów<\/strong>.<\/p><p>Z tej okazji przygotowaliśmy&nbsp;<strong>Jesienną Wyprzedaż z rabatami aż do 50% na wybrane modele — tylko przez ograniczony czas!<\/strong><\/p><p><strong>Nowy sezon. Ta sama miłość do mody.<\/strong><\/p><p>Dziękujemy, że są Państwo częścią naszej historii. 🤍<\/p>"}}},"block_order":["heading_QMtiTP","text_UJf3Qd"],"name":"Rich text","settings":{"align_text":"center","narrow_column":true,"divider":false}},"1790774330ca5b968e":{"type":"apps","settings":{"full_width":false,"space_around":true}},"blocks_i9Wixp":{"type":"_blocks","blocks":{"ai_gen_block_a930d6f_dH6wN9":{"type":"ai_gen_block_a930d6f","settings":{"desktop_width_percent":100,"line_color":"#d0d0d0","thickness":1,"line_style":"solid","vertical_spacing":15},"blocks":{}}},"block_order":["ai_gen_block_a930d6f_dH6wN9"],"name":"Separator line","settings":{}},"featured_collection_qLQGbj":{"type":"featured-collection","name":"Featured collection","settings":{"title":"NAJCZĘŚCIEJ WYBIERANE","home_featured_products":"swetry-i-kardigany","per_row":4,"rows":2,"mobile_scrollable":true,"view_all":true,"divider":false}},"text_and_image_EpC6dy":{"type":"text-and-image","disabled":true,"name":"Image with text","settings":{"image_width":700,"subtitle":"","title":"BUTIK STWORZONY Z MIŁOŚCI","text":"<p>Kiedy zakładałam&nbsp;<strong>Butik Heleny Kraków<\/strong>, miałam jedno proste marzenie: stworzyć miejsce, w którym kobiety znajdą piękne, ponadczasowe ubrania, dzięki którym każdego dnia będą czuły się elegancko, pewnie i komfortowo.<\/p><p>Zainspirowana urokiem i elegancją Krakowa, chciałam, aby każda kolekcja była wyjątkowa, pełna starannie wybranych ubrań, które kobiety pokochają na wiele sezonów.<\/p><p>To, co zaczęło się od małego marzenia, przerodziło się w coś naprawdę wyjątkowego — dzięki zaufaniu i wsparciu naszych wspaniałych Klientek.<\/p><p>Jedno pozostaje niezmienne: nasza miłość do ponadczasowej mody, starannie dobranych kolekcji i sprawiania, by każda kobieta czuła się wyjątkowo.<\/p><p>W świecie, w którym małe, niezależne butiki stają się coraz rzadsze, każde zamówienie naprawdę wiele dla nas znaczy.<\/p><p>🤍&nbsp;<strong>Wybierając Butik Heleny Kraków, nie tylko znajdujesz coś pięknego. Wspierasz marzenie zbudowane na pasji, trosce i miłości do ponadczasowej elegancji.<\/strong><\/p><p>Z miłością,<br\/><strong>Helena&nbsp;<\/strong><\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"center","layout":"right","divider":false}},"background_image_text_cfE8ir":{"type":"background-image-text","name":"Large image with text box","settings":{"subtitle":"BUTIK HELENY KRAKÓW","title":"PONADCZASOWA ELEGANCJA I STYL","text":"<p>Zainspirowani wyjątkowym urokiem Krakowa, wybieramy ponadczasowe ubrania, które łączą elegancję, wygodę i kobiecy styl.<\/p><p>Miękkie materiały, piękne fasony i starannie dobrane detale. Wszystko po to, aby każdego dnia mogły się Panie czuć pięknie, swobodnie i pewnie.<\/p><p>Wybrane z sercem,<br\/><strong>Helena 🤍<\/strong><\/p>","button_label":"","button_link":"","image":"shopify:\/\/shop_images\/krakau-polen.webp","focal_point":"center","layout":"left","height":650,"framed":false,"parallax":false}},"blocks_gxJVdb":{"type":"_blocks","blocks":{"ai_gen_block_a930d6f_w4WEe6":{"type":"ai_gen_block_a930d6f","settings":{"desktop_width_percent":100,"line_color":"#d0d0d0","thickness":1,"line_style":"solid","vertical_spacing":15},"blocks":{}}},"block_order":["ai_gen_block_a930d6f_w4WEe6"],"name":"Separator line","settings":{}},"featured_collection_3ALpBb":{"type":"featured-collection","name":"Featured collection","settings":{"title":"JESIENNE ULUBIONE","home_featured_products":"komplety","per_row":4,"rows":1,"mobile_scrollable":true,"view_all":true,"divider":false}},"text_columns_YnQVDV":{"type":"text-columns","blocks":{"text_block_9WWfby":{"type":"text_block","settings":{"enable_image":true,"image_width":60,"title":"FREE SHIPPING","text":"<p>Free shipping on every order across the U.S. this week only. We’ll deliver straight to your door, safely and without extra cost.<br\/><br\/><\/p>","button_label":"","button_link":""}},"text_block_F88kgY":{"type":"text_block","settings":{"enable_image":true,"image_width":60,"title":"Easy returns","text":"<p>Shop with confidence. Every order comes with a 30-day money back guarantee, so you can try us risk-free.<\/p>","button_label":"","button_link":""}},"text_block_wMFFKF":{"type":"text_block","settings":{"enable_image":true,"image_width":60,"title":"24\/7 CUSTOMER SERVICE","text":"<p>Available 24\/7 for personalized support.<br\/>Professional, reliable, and always here for you.<\/p>","button_label":"","button_link":""}}},"block_order":["text_block_9WWfby","text_block_F88kgY","text_block_wMFFKF"],"disabled":true,"name":"Text columns with images","settings":{"title":"","align_text":"center","divider":false}},"featured_collections_V69yeg":{"type":"featured-collections","blocks":{"collection_CDrHwQ":{"type":"collection","settings":{"collection":"sweaters-hoodies","title":"Sweaters & Hoodies","focal_point":"center center"}},"collection_WYMJdB":{"type":"collection","settings":{"collection":"two-piece-sets-jumpsuits","title":"Two-Piece Sets & Jumpsuits","focal_point":"center center"}},"collection_7tkGkx":{"type":"collection","settings":{"collection":"blouses","title":"Blouses","focal_point":"center center"}},"collection_APEJRN":{"type":"collection","settings":{"collection":"quilted-jackets","title":"Quilted Jackets","focal_point":"center center"}},"collection_TmiVYB":{"type":"collection","settings":{"collection":"jackets","title":"Jackets","focal_point":"center center"}},"collection_hW9BVq":{"type":"collection","settings":{"collection":"statement-blazers","title":"Statement Blazers","focal_point":"center center"}},"collection_t3Gjnx":{"type":"collection","settings":{"collection":"turtleneck-sweaters","title":"Turtleneck Sweaters","focal_point":"center center"}},"collection_BeJjmz":{"type":"collection","settings":{"collection":"weatherproof-coats","title":"Weatherproof Coats","focal_point":"center center"}}},"block_order":["collection_CDrHwQ","collection_WYMJdB","collection_7tkGkx","collection_APEJRN","collection_TmiVYB","collection_hW9BVq","collection_t3Gjnx","collection_BeJjmz"],"disabled":true,"custom_css":["h2 {font-size: 22px;}"],"name":"Collection list","settings":{"title":"ULUBIONE KOLEKCJE — TERAZ RABATY AŻ DO 60%","divider":false,"per_row":4,"enable_gutter":true}},"faq_K7V8Pg":{"type":"faq","blocks":{"question_eCeqhb":{"type":"question","settings":{"title":"Jak można się z nami skontaktować?","text":"<p>Chętnie pomożemy w doborze rozmiaru, kwestiach związanych z dostawą oraz odpowiemy na pytania dotyczące zamówienia.<\/p><p>Wystarczy odwiedzić naszą&nbsp;<strong>stronę kontaktową<\/strong>&nbsp;i wysłać wiadomość. W przypadku istniejącego zamówienia prosimy o podanie&nbsp;<strong>numeru zamówienia<\/strong>, abyśmy mogli szybciej pomóc.<\/p>"}},"question_GmBtYt":{"type":"question","settings":{"title":"Czy można zmienić lub anulować zamówienie?","text":"<p>Jeśli zmienili Państwo zdanie lub zauważyli błąd, prosimy o&nbsp;<strong>jak najszybszy kontakt<\/strong>&nbsp;z podaniem numeru zamówienia i informacji o potrzebnej zmianie.<\/p><p>Dołożymy wszelkich starań, aby pomóc. Zmiana lub anulowanie może jednak nie być możliwe, jeśli zamówienie jest już przygotowywane lub zostało wysłane.<\/p>"}},"question_KzCxXL":{"type":"question","settings":{"title":"Jak długo trzeba czekać na dostawę zamówienia?","text":"<p>Przygotowanie zamówienia zajmuje&nbsp;<strong>1–3 dni robocze<\/strong>, a dostawa kolejne&nbsp;<strong>5–8 dni roboczych<\/strong>. Łączny czas oczekiwania wynosi zazwyczaj&nbsp;<strong>6–11 dni roboczych<\/strong>.<\/p><p>Szczegółowe informacje znajdą Państwo na naszej stronie&nbsp;<strong>Informacje o dostawie<\/strong>.<\/p>"}},"question_Wj6zaX":{"type":"question","settings":{"title":"Czy oferują Państwo darmową dostawę?","text":"<p>Tak! Oferujemy&nbsp;<strong>darmową dostawę przy każdym zamówieniu, bez minimalnej kwoty zakupu<\/strong>.<\/p><p>To nasz sposób, aby podziękować Państwu za zakupy w&nbsp;<strong>Butik Heleny Kraków<\/strong>.<\/p>"}},"question_LwMpbE":{"type":"question","settings":{"title":"Jak można śledzić zamówienie?","text":"<p>Po wysłaniu zamówienia otrzymają Państwo wiadomość e-mail z&nbsp;<strong>numerem śledzenia przesyłki<\/strong>.<\/p><p>Aktualny status dostawy można również sprawdzić na naszej stronie w sekcji&nbsp;<strong>Śledź zamówienie<\/strong>.<\/p><p>W razie pytań prosimy o&nbsp;<strong>kontakt<\/strong>&nbsp;z podaniem numeru zamówienia.<\/p>"}},"question_JY4bYR":{"type":"question","settings":{"title":"Jak wybrać odpowiedni rozmiar?","text":"<p>Nasze ubrania mają&nbsp;<strong>standardową rozmiarówkę<\/strong>. Przy każdym produkcie znajdą Państwo szczegółową&nbsp;<strong>tabelę rozmiarów<\/strong>, która pomoże wybrać odpowiedni rozmiar i zapewnić wygodne dopasowanie.<\/p>"}},"question_4jGjhq":{"type":"question","settings":{"title":"Jakie są zasady zwrotów?","text":"<p>Zakup nie spełnił Państwa oczekiwań? Bez obaw!<\/p><p>Mogą Państwo zwrócić zamówienie w ciągu&nbsp;<strong>30 dni od jego otrzymania<\/strong>. Dbamy o to, aby cały proces był prosty i przebiegał sprawnie.<\/p>"}}},"block_order":["question_eCeqhb","question_GmBtYt","question_KzCxXL","question_Wj6zaX","question_LwMpbE","question_JY4bYR","question_4jGjhq"],"custom_css":["h2,.collapsible-trigger,strong,b {color: #303030 !important;}",".collapsible-trigger {position: relative; width: 100%; padding: 24px 35px 24px 0 !important; border-bottom: 1px solid #d0d0d0 !important; text-align: left; font-weight: 700;}",".collapsible-trigger__icon {left: auto !important; right: 0 !important; border: 0 !important; background: none !important;}",".collapsible-trigger__icon:before {border: 0 !important;}",".collapsible-content__inner {padding: 18px 0 !important;}"],"name":"FAQ","settings":{"title":"NAJCZĘŚCIEJ ZADAWANE PYTANIA"}},"179069279829c3c6e9":{"type":"_blocks","blocks":{"ai_gen_block_a930d6f_LiaF3G":{"type":"ai_gen_block_a930d6f","settings":{"desktop_width_percent":100,"line_color":"#d0d0d0","thickness":1,"line_style":"solid","vertical_spacing":15},"blocks":{}},"ai_gen_block_5a00a50_zJqJMr":{"type":"ai_gen_block_5a00a50","settings":{"custom_liquid":"<style>\n  .susans-usps {\n    width: 100%;\n    background: #FFFFFF;\n    padding: 38px 40px 32px;\n    box-sizing: border-box;\n  }\n\n  .susans-usps__grid {\n    width: 100%;\n    max-width: 1400px;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    column-gap: 40px;\n    row-gap: 40px;\n  }\n\n  .susans-usps__item {\n    text-align: center;\n    min-width: 0;\n  }\n\n  .susans-usps__icon {\n    width: 94px;\n    height: 94px;\n    border-radius: 50%;\n    margin: 0 auto 10px;\n    background: #303030;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .susans-usps__icon svg {\n    width: 42px;\n    height: 42px;\n    stroke: #FFFFFF;\n    fill: none;\n    stroke-width: 1.45;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n  }\n\n  .susans-usps__title {\n    margin: 0;\n    color: #000000;\n    font-family: \"Outfit\", sans-serif;\n    font-size: 20px;\n    font-weight: 400;\n    letter-spacing: .3px;\n    line-height: 1.2;\n    text-transform: uppercase;\n  }\n\n  \/* TABLET *\/\n  @media screen and (max-width: 989px) {\n    .susans-usps {\n      padding: 34px 24px 30px;\n    }\n\n    .susans-usps__grid {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      column-gap: 40px;\n      row-gap: 50px;\n    }\n  }\n\n  \/* MOBILE *\/\n  @media screen and (max-width: 749px) {\n    .susans-usps {\n      padding: 28px 12px 26px;\n    }\n\n    .susans-usps__grid {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      column-gap: 16px;\n      row-gap: 42px;\n    }\n\n    .susans-usps__icon {\n      width: 76px;\n      height: 76px;\n      margin-bottom: 9px;\n    }\n\n    .susans-usps__icon svg {\n      width: 34px;\n      height: 34px;\n    }\n\n    .susans-usps__title {\n      font-size: 14px;\n      letter-spacing: .2px;\n    }\n  }\n<\/style>\n\n<div class=\"susans-usps\">\n  <div class=\"susans-usps__grid\">\n\n    <!-- INSPIROWANE KRAKOWEM -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <path d=\"M8 51h48\"\/>\n          <path d=\"M13 51V30h38v21\"\/>\n          <path d=\"M19 30V20h9v10\"\/>\n          <path d=\"M36 30V20h9v10\"\/>\n          <path d=\"M18 20l5.5-9 5.5 9\"\/>\n          <path d=\"M35 20l5.5-9 5.5 9\"\/>\n          <path d=\"M29 51V39a3 3 0 0 1 6 0v12\"\/>\n          <path d=\"M18 37h6v7h-6z\"\/>\n          <path d=\"M40 37h6v7h-6z\"\/>\n        <\/svg>\n      <\/div>\n      <p class=\"susans-usps__title\">\n        Inspirowane Krakowem\n      <\/p>\n    <\/div>\n\n    <!-- DARMOWA DOSTAWA -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <path d=\"M6 23h15\"\/>\n          <path d=\"M4 29h14\"\/>\n          <path d=\"M8 35h10\"\/>\n          <path d=\"M20 18h24v25H20\"\/>\n          <path d=\"M44 27h7l7 9v7H44\"\/>\n          <path d=\"M25 23h13\"\/>\n          <circle cx=\"28\" cy=\"46\" r=\"3.5\"\/>\n          <circle cx=\"51\" cy=\"46\" r=\"3.5\"\/>\n        <\/svg>\n      <\/div>\n      <p class=\"susans-usps__title\">\n        Darmowa Dostawa\n      <\/p>\n    <\/div>\n\n    <!-- 30 DNI NA ZWROT -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <path d=\"M8 16h8l5 29h28\"\/>\n          <path d=\"M19 22h36l-6 20H23z\"\/>\n          <path d=\"M28 22l2 20\"\/>\n          <path d=\"M38 22v20\"\/>\n          <path d=\"M48 22l-3 20\"\/>\n          <circle cx=\"28\" cy=\"50\" r=\"3\"\/>\n          <circle cx=\"46\" cy=\"50\" r=\"3\"\/>\n        <\/svg>\n      <\/div>\n      <p class=\"susans-usps__title\">\n        30 Dni Na Zwrot\n      <\/p>\n    <\/div>\n\n    <!-- BEZPIECZNE PŁATNOŚCI -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <rect x=\"12\" y=\"22\" width=\"40\" height=\"28\" rx=\"2\"\/>\n          <path d=\"M18 22l27-8 3 8\"\/>\n          <path d=\"M21 22l22-5\"\/>\n          <path d=\"M42 31h14v11H42a5.5 5.5 0 0 1 0-11z\"\/>\n          <circle cx=\"47\" cy=\"36.5\" r=\"1.2\"\/>\n        <\/svg>\n      <\/div>\n      <p class=\"susans-usps__title\">\n        Bezpieczne Płatności\n      <\/p>\n    <\/div>\n\n  <\/div>\n<\/div>","desktop_width_percent":100},"blocks":{}}},"block_order":["ai_gen_block_a930d6f_LiaF3G","ai_gen_block_5a00a50_zJqJMr"],"settings":{}},"feature_pro_QdXhN7":{"type":"feature-pro","blocks":{"slide_tFRtPi":{"type":"slide","settings":{"icon":"worldwide","title":"<h3>FREE SHIPPING<\/h3>","text":"<p>We are offering free shipping only today. All orders ship with UPS and include full tracking.<\/p>"}},"slide_tcXgmA":{"type":"slide","settings":{"icon":"time","title":"<h3>Easy returns<\/h3>","text":"<p>You have 30 days after receiving your order to return or exchange it.<\/p>"}},"slide_nRF8rD":{"type":"slide","settings":{"icon":"chat-dots","title":"<h3>24\/7 CUSTOMER SERVICE<\/h3>","text":"<p>We are always available, providing fast and personalized support, ensuring an exceptional customer experience with professionalism and reliability.<\/p>"}},"slide_d9jF4e":{"type":"slide","settings":{"icon":"payment","title":"<h3>SSL Ecryption for safe and secure payments<\/h3>","text":"<p>SSL-secured Shop Pay, Apple Pay,  Credit Card payments.<\/p>"}}},"block_order":["slide_tFRtPi","slide_tcXgmA","slide_nRF8rD","slide_d9jF4e"],"disabled":true,"name":"Feature Pro","settings":{"stack_on_mobile":true,"center_on_desktop":true,"items":4,"items_tablet":2,"icon_size":48,"title_size":22,"text_size":14,"title_color":"#000000","text_color":"#000000","icon_color":"#000000","pagination_color":"#000000","background-color":"#ffffff","padding_top":0,"padding_bottom":36}}},"order":["1790691936f2880f04","slideshow_XGpN3P","blocks_gU6GJr","rich_text_Agx4tL","1790774330ca5b968e","blocks_i9Wixp","featured_collection_qLQGbj","text_and_image_EpC6dy","background_image_text_cfE8ir","blocks_gxJVdb","featured_collection_3ALpBb","text_columns_YnQVDV","featured_collections_V69yeg","faq_K7V8Pg","179069279829c3c6e9","feature_pro_QdXhN7"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1790691936f2880f04": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_06912cd_whbtLd": {
+          "type": "ai_gen_block_06912cd",
+          "name": "Aangepaste Liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<style>\n  .susans-countdown-bar {\n    width: 100%;\n    background: #07321E;\n    color: #FFFFFF;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 44px;\n    padding: 5px 12px;\n    box-sizing: border-box;\n  }\n\n  .susans-countdown-inner {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 12px;\n    white-space: nowrap;\n  }\n\n  .susans-countdown-title {\n    font-size: 12px;\n    font-weight: 700;\n    letter-spacing: 2px;\n    text-transform: uppercase;\n    line-height: 1;\n  }\n\n  .susans-countdown-time {\n    display: flex;\n    align-items: flex-start;\n    gap: 4px;\n  }\n\n  .susans-time-unit {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    min-width: 29px;\n  }\n\n  .susans-time-number {\n    font-size: 21px;\n    font-weight: 700;\n    letter-spacing: 0.5px;\n    line-height: 19px;\n  }\n\n  .susans-time-label {\n    margin-top: 3px;\n    font-size: 6px;\n    font-weight: 600;\n    letter-spacing: 0.7px;\n    text-transform: uppercase;\n    line-height: 1;\n    opacity: 0.95;\n  }\n\n  .susans-time-colon {\n    font-size: 19px;\n    font-weight: 700;\n    line-height: 18px;\n  }\n\n  @media screen and (max-width: 749px) {\n    .susans-countdown-bar {\n      min-height: 40px;\n      padding: 4px 8px;\n    }\n\n    .susans-countdown-inner {\n      gap: 9px;\n    }\n\n    .susans-countdown-title {\n      font-size: 10px;\n      letter-spacing: 1.6px;\n    }\n\n    .susans-time-number {\n      font-size: 19px;\n    }\n\n    .susans-time-colon {\n      font-size: 17px;\n    }\n\n    .susans-time-unit {\n      min-width: 27px;\n    }\n  }\n</style>\n\n<div class=\"susans-countdown-bar\">\n  <div class=\"susans-countdown-inner\">\n\n    <div class=\"susans-countdown-title\">\n      Sale Ends In\n    </div>\n\n    <div class=\"susans-countdown-time\">\n\n      <div class=\"susans-time-unit\">\n        <span class=\"susans-time-number\" id=\"susans-hours\">00</span>\n        <span class=\"susans-time-label\">HRS</span>\n      </div>\n\n      <span class=\"susans-time-colon\">:</span>\n\n      <div class=\"susans-time-unit\">\n        <span class=\"susans-time-number\" id=\"susans-minutes\">00</span>\n        <span class=\"susans-time-label\">MINS</span>\n      </div>\n\n      <span class=\"susans-time-colon\">:</span>\n\n      <div class=\"susans-time-unit\">\n        <span class=\"susans-time-number\" id=\"susans-seconds\">00</span>\n        <span class=\"susans-time-label\">SECS</span>\n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n<script>\n(function() {\n\n  function getNextMidnight() {\n    const now = new Date();\n\n    const midnight = new Date(\n      now.getFullYear(),\n      now.getMonth(),\n      now.getDate() + 1,\n      0,\n      0,\n      0,\n      0\n    );\n\n    return midnight.getTime();\n  }\n\n  let targetTime = getNextMidnight();\n\n  function updateSusansCountdown() {\n    const now = new Date().getTime();\n    let distance = targetTime - now;\n\n    if (distance <= 0) {\n      targetTime = getNextMidnight();\n      distance = targetTime - now;\n    }\n\n    const hours = Math.floor(\n      distance / (1000 * 60 * 60)\n    );\n\n    const minutes = Math.floor(\n      (distance % (1000 * 60 * 60)) / (1000 * 60)\n    );\n\n    const seconds = Math.floor(\n      (distance % (1000 * 60)) / 1000\n    );\n\n    const hoursEl = document.getElementById('susans-hours');\n    const minutesEl = document.getElementById('susans-minutes');\n    const secondsEl = document.getElementById('susans-seconds');\n\n    if (hoursEl) {\n      hoursEl.textContent = String(hours).padStart(2, '0');\n    }\n\n    if (minutesEl) {\n      minutesEl.textContent = String(minutes).padStart(2, '0');\n    }\n\n    if (secondsEl) {\n      secondsEl.textContent = String(seconds).padStart(2, '0');\n    }\n  }\n\n  updateSusansCountdown();\n  setInterval(updateSusansCountdown, 1000);\n\n})();\n</script>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_06912cd_Pgy6Ed": {
+          "type": "ai_gen_block_06912cd",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<style>\n  .susans-collection-nav {\n    position: relative;\n    width: 100%;\n    background: #FFFFFF;\n    border-top: 1px solid rgba(208, 208, 208, 0.40);\n    border-bottom: 1px solid rgba(208, 208, 208, 0.40);\n    overflow: hidden;\n    box-sizing: border-box;\n  }\n\n  .susans-collection-nav__track {\n    width: 100%;\n    max-width: 1400px;\n    min-height: 46px;\n    margin: 0 auto;\n    padding: 0 30px;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 16px;\n    box-sizing: border-box;\n    white-space: nowrap;\n  }\n\n  .susans-collection-nav__link {\n    position: relative;\n    flex: 0 0 auto;\n    min-height: 46px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #1F1F1F !important;\n    text-decoration: none !important;\n    text-transform: uppercase;\n    font-family: 'Outfit', sans-serif;\n    font-size: 11px;\n    font-weight: 600;\n    letter-spacing: 0.8px;\n    line-height: 1;\n    transition: opacity 0.2s ease;\n  }\n\n  .susans-collection-nav__link:hover {\n    opacity: 0.62;\n  }\n\n  /* Wyróżnione kolekcje */\n  .susans-collection-nav__link--featured {\n    color: #4A382B !important;\n    font-weight: 700;\n  }\n\n  /* Aktywna kolekcja */\n  .susans-collection-nav__link.is-active {\n    font-weight: 700;\n  }\n\n  .susans-collection-nav__link.is-active::after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: 7px;\n    height: 1px;\n    background: #1F1F1F;\n  }\n\n  .susans-collection-nav__link--featured.is-active::after {\n    background: #4A382B;\n  }\n\n  .susans-collection-nav__arrow {\n    display: none;\n  }\n\n  /* Tablety i mniejsze ekrany komputerów */\n  @media screen and (max-width: 1280px) {\n    .susans-collection-nav__track {\n      max-width: none;\n      min-height: 40px;\n      justify-content: flex-start;\n      gap: 25px;\n      padding: 0 42px 0 48px;\n      overflow-x: auto;\n      scroll-behavior: smooth;\n      scrollbar-width: none;\n      -ms-overflow-style: none;\n    }\n\n    .susans-collection-nav__track::-webkit-scrollbar {\n      display: none;\n    }\n\n    .susans-collection-nav__link {\n      min-height: 40px;\n      font-size: 10.5px;\n      letter-spacing: 0.9px;\n    }\n\n    .susans-collection-nav__link.is-active::after {\n      bottom: 5px;\n    }\n\n    .susans-collection-nav__arrow {\n      position: absolute;\n      top: 0;\n      bottom: 0;\n      z-index: 10;\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 0;\n      margin: 0;\n      border: 0;\n      background: #FFFFFF;\n      color: #1F1F1F;\n      font-family: Arial, sans-serif;\n      font-size: 18px;\n      font-weight: 300;\n      line-height: 1;\n      cursor: pointer;\n    }\n\n    .susans-collection-nav__arrow--left {\n      left: 0;\n      box-shadow: 9px 0 14px #FFFFFF;\n    }\n\n    .susans-collection-nav__arrow--right {\n      right: 0;\n      box-shadow: -9px 0 14px #FFFFFF;\n    }\n  }\n\n  /* Urządzenia mobilne */\n  @media screen and (max-width: 749px) {\n    .susans-collection-nav__track {\n      min-height: 37px;\n      gap: 21px;\n      padding: 0 36px 0 44px;\n    }\n\n    .susans-collection-nav__link {\n      min-height: 37px;\n      font-size: 10px;\n      letter-spacing: 0.8px;\n    }\n\n    .susans-collection-nav__link.is-active::after {\n      bottom: 4px;\n    }\n\n    .susans-collection-nav__arrow {\n      width: 29px;\n      font-size: 17px;\n    }\n  }\n</style>\n\n<div class=\"susans-collection-nav\">\n\n  <!-- Strzałka w lewo -->\n  <button\n    type=\"button\"\n    class=\"susans-collection-nav__arrow susans-collection-nav__arrow--left\"\n    aria-label=\"Przewiń kolekcje w lewo\"\n    onclick=\"this.parentElement.querySelector('.susans-collection-nav__track').scrollBy({ left: -280, behavior: 'smooth' })\"\n  >\n    ‹\n  </button>\n\n  <!-- Nawigacja po kolekcjach -->\n  <nav class=\"susans-collection-nav__track\" aria-label=\"Przeglądaj kolekcje\">\n\n    <!-- Najczęściej wybierane -->\n    <a href=\"/collections/most-loved\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'most-loved' %} is-active{% endif %}\">\n      Najczęściej Wybierane\n    </a>\n\n    <!-- Kardigany i swetry -->\n    <a href=\"/collections/cardigans-sweaters\"\n       class=\"susans-collection-nav__link susans-collection-nav__link--featured{% if collection.handle == 'cardigans-sweaters' %} is-active{% endif %}\">\n      Kardigany i Swetry\n    </a>\n\n    <!-- Przytulne poncza -->\n    <a href=\"/collections/cozy-poncho-sweaters\"\n       class=\"susans-collection-nav__link susans-collection-nav__link--featured{% if collection.handle == 'cozy-poncho-sweaters' %} is-active{% endif %}\">\n      Ciepłe Poncza\n    </a>\n\n    <!-- Jesienne bluzy -->\n    <a href=\"/collections/autumn-hoodies\"\n       class=\"susans-collection-nav__link susans-collection-nav__link--featured{% if collection.handle == 'autumn-hoodies' %} is-active{% endif %}\">\n      Jesienne Bluzy\n    </a>\n\n    <!-- Płaszcze i kurtki -->\n    <a href=\"/collections/coats-jackets\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'coats-jackets' %} is-active{% endif %}\">\n      Płaszcze i Kurtki\n    </a>\n\n    <!-- Marynarki -->\n    <a href=\"/collections/blazers\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'blazers' %} is-active{% endif %}\">\n      Marynarki\n    </a>\n\n    <!-- Torebki -->\n    <a href=\"/collections/bags\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'bags' %} is-active{% endif %}\">\n      Torebki\n    </a>\n\n    <!-- Akcesoria -->\n    <a href=\"/collections/accessories\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'accessories' %} is-active{% endif %}\">\n      Akcesoria\n    </a>\n\n    <!-- Na co dzień -->\n    <a href=\"/collections/the-everyday-edit\"\n       class=\"susans-collection-nav__link{% if collection.handle == 'the-everyday-edit' %} is-active{% endif %}\">\n      Stylizacje na Co Dzień\n    </a>\n\n  </nav>\n\n  <!-- Strzałka w prawo -->\n  <button\n    type=\"button\"\n    class=\"susans-collection-nav__arrow susans-collection-nav__arrow--right\"\n    aria-label=\"Przewiń kolekcje w prawo\"\n    onclick=\"this.parentElement.querySelector('.susans-collection-nav__track').scrollBy({ left: 280, behavior: 'smooth' })\"\n  >\n    ›\n  </button>\n\n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_06912cd_whbtLd",
+        "ai_gen_block_06912cd_Pgy6Ed"
+      ],
+      "settings": {}
+    },
+    "slideshow_XGpN3P": {
+      "type": "slideshow",
+      "blocks": {
+        "image_qmNkGY": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/all",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#00b67b",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/lance-reis--EKIQx3h8Eg-unsplash.jpg",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "image_qmNkGY"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "bars",
+        "autoplay": false,
+        "autoplay_speed": 5
+      }
+    },
+    "blocks_gU6GJr": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5a00a50_JPzTkC": {
+          "type": "ai_gen_block_5a00a50",
+          "settings": {
+            "custom_liquid": "<a href=\"/collections/all\" class=\"susans-collection-button\">\n  ZOBACZ WSZYSTKIE PRODUKTY\n  <span aria-hidden=\"true\">→</span>\n</a>\n\n<style>\n  .susans-collection-button {\n    width: 100%;\n    min-height: 38px;\n    padding: 9px 18px;\n    box-sizing: border-box;\n\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 10px;\n\n    background: #4A382B;\n    color: #FFFFFF !important;\n\n    font-family: 'Outfit', sans-serif;\n    font-size: 11px;\n    font-weight: 700;\n    letter-spacing: 1.4px;\n    text-transform: uppercase;\n    text-decoration: none !important;\n\n    border: 1px solid #4A382B;\n    transition:\n      background-color 0.2s ease,\n      color 0.2s ease;\n  }\n\n  .susans-collection-button:hover {\n    background: #604B3B;\n    color: #FFFFFF !important;\n  }\n\n  .susans-collection-button span {\n    font-size: 15px;\n    line-height: 1;\n    transition: transform 0.2s ease;\n  }\n\n  .susans-collection-button:hover span {\n    transform: translateX(3px);\n  }\n\n  @media screen and (max-width: 749px) {\n    .susans-collection-button {\n      min-height: 36px;\n      padding: 8px 14px;\n      font-size: 10px;\n      letter-spacing: 1.2px;\n    }\n\n    .susans-collection-button span {\n      font-size: 14px;\n    }\n  }\n</style>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5a00a50_JPzTkC"
+      ],
+      "name": "Custom liquid",
+      "settings": {}
+    },
+    "rich_text_Agx4tL": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QMtiTP": {
+          "type": "heading",
+          "settings": {
+            "title": "JESIENNA WYPRZEDAŻ"
+          }
+        },
+        "text_UJf3Qd": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Kiedy Helena zakładała&nbsp;<strong>Butik Heleny Kraków</strong>, marzyła o stworzeniu miejsca, w którym każda kobieta znajdzie ponadczasową modę, łączącą elegancję z wygodą.</p><p>Dzięki zaufaniu i wsparciu naszych Klientek to marzenie stało się rzeczywistością.</p><p>Dziś, inspirowani urokiem Krakowa, świętujemy jesień kolekcją pełną&nbsp;<strong>ciepłych swetrów, eleganckich płaszczy i ponadczasowych fasonów</strong>.</p><p>Z tej okazji przygotowaliśmy&nbsp;<strong>Jesienną Wyprzedaż z rabatami aż do 50% na wybrane modele — tylko przez ograniczony czas!</strong></p><p><strong>Nowy sezon. Ta sama miłość do mody.</strong></p><p>Dziękujemy, że są Państwo częścią naszej historii. 🤍</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QMtiTP",
+        "text_UJf3Qd"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "1790774330ca5b968e": {
+      "type": "apps",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "blocks_i9Wixp": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a930d6f_dH6wN9": {
+          "type": "ai_gen_block_a930d6f",
+          "settings": {
+            "desktop_width_percent": 100,
+            "line_color": "#d0d0d0",
+            "thickness": 1,
+            "line_style": "solid",
+            "vertical_spacing": 15
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a930d6f_dH6wN9"
+      ],
+      "name": "Separator line",
+      "settings": {}
+    },
+    "featured_collection_qLQGbj": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "NAJCZĘŚCIEJ WYBIERANE",
+        "home_featured_products": "swetry-i-kardigany",
+        "per_row": 4,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "text_and_image_EpC6dy": {
+      "type": "text-and-image",
+      "disabled": true,
+      "name": "Image with text",
+      "settings": {
+        "image_width": 700,
+        "subtitle": "",
+        "title": "BUTIK STWORZONY Z MIŁOŚCI",
+        "text": "<p>Kiedy zakładałam&nbsp;<strong>Butik Heleny Kraków</strong>, miałam jedno proste marzenie: stworzyć miejsce, w którym kobiety znajdą piękne, ponadczasowe ubrania, dzięki którym każdego dnia będą czuły się elegancko, pewnie i komfortowo.</p><p>Zainspirowana urokiem i elegancją Krakowa, chciałam, aby każda kolekcja była wyjątkowa, pełna starannie wybranych ubrań, które kobiety pokochają na wiele sezonów.</p><p>To, co zaczęło się od małego marzenia, przerodziło się w coś naprawdę wyjątkowego — dzięki zaufaniu i wsparciu naszych wspaniałych Klientek.</p><p>Jedno pozostaje niezmienne: nasza miłość do ponadczasowej mody, starannie dobranych kolekcji i sprawiania, by każda kobieta czuła się wyjątkowo.</p><p>W świecie, w którym małe, niezależne butiki stają się coraz rzadsze, każde zamówienie naprawdę wiele dla nas znaczy.</p><p>🤍&nbsp;<strong>Wybierając Butik Heleny Kraków, nie tylko znajdujesz coś pięknego. Wspierasz marzenie zbudowane na pasji, trosce i miłości do ponadczasowej elegancji.</strong></p><p>Z miłością,<br/><strong>Helena&nbsp;</strong></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "center",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "background_image_text_cfE8ir": {
+      "type": "background-image-text",
+      "name": "Large image with text box",
+      "settings": {
+        "subtitle": "BUTIK HELENY KRAKÓW",
+        "title": "PONADCZASOWA ELEGANCJA I STYL",
+        "text": "<p>Zainspirowani wyjątkowym urokiem Krakowa, wybieramy ponadczasowe ubrania, które łączą elegancję, wygodę i kobiecy styl.</p><p>Miękkie materiały, piękne fasony i starannie dobrane detale. Wszystko po to, aby każdego dnia mogły się Panie czuć pięknie, swobodnie i pewnie.</p><p>Wybrane z sercem,<br/><strong>Helena 🤍</strong></p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/krakau-polen.webp",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 650,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "blocks_gxJVdb": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a930d6f_w4WEe6": {
+          "type": "ai_gen_block_a930d6f",
+          "settings": {
+            "desktop_width_percent": 100,
+            "line_color": "#d0d0d0",
+            "thickness": 1,
+            "line_style": "solid",
+            "vertical_spacing": 15
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a930d6f_w4WEe6"
+      ],
+      "name": "Separator line",
+      "settings": {}
+    },
+    "featured_collection_3ALpBb": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "title": "JESIENNE ULUBIONE",
+        "home_featured_products": "komplety",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "text_columns_YnQVDV": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_9WWfby": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_width": 60,
+            "title": "FREE SHIPPING",
+            "text": "<p>Free shipping on every order across the U.S. this week only. We’ll deliver straight to your door, safely and without extra cost.<br/><br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_F88kgY": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_width": 60,
+            "title": "Easy returns",
+            "text": "<p>Shop with confidence. Every order comes with a 30-day money back guarantee, so you can try us risk-free.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_wMFFKF": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_width": 60,
+            "title": "24/7 CUSTOMER SERVICE",
+            "text": "<p>Available 24/7 for personalized support.<br/>Professional, reliable, and always here for you.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_9WWfby",
+        "text_block_F88kgY",
+        "text_block_wMFFKF"
+      ],
+      "disabled": true,
+      "name": "Text columns with images",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false
+      }
+    },
+    "featured_collections_V69yeg": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_CDrHwQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "sweaters-hoodies",
+            "title": "Sweaters & Hoodies",
+            "focal_point": "center center"
+          }
+        },
+        "collection_WYMJdB": {
+          "type": "collection",
+          "settings": {
+            "collection": "two-piece-sets-jumpsuits",
+            "title": "Two-Piece Sets & Jumpsuits",
+            "focal_point": "center center"
+          }
+        },
+        "collection_7tkGkx": {
+          "type": "collection",
+          "settings": {
+            "collection": "blouses",
+            "title": "Blouses",
+            "focal_point": "center center"
+          }
+        },
+        "collection_APEJRN": {
+          "type": "collection",
+          "settings": {
+            "collection": "quilted-jackets",
+            "title": "Quilted Jackets",
+            "focal_point": "center center"
+          }
+        },
+        "collection_TmiVYB": {
+          "type": "collection",
+          "settings": {
+            "collection": "jackets",
+            "title": "Jackets",
+            "focal_point": "center center"
+          }
+        },
+        "collection_hW9BVq": {
+          "type": "collection",
+          "settings": {
+            "collection": "statement-blazers",
+            "title": "Statement Blazers",
+            "focal_point": "center center"
+          }
+        },
+        "collection_t3Gjnx": {
+          "type": "collection",
+          "settings": {
+            "collection": "turtleneck-sweaters",
+            "title": "Turtleneck Sweaters",
+            "focal_point": "center center"
+          }
+        },
+        "collection_BeJjmz": {
+          "type": "collection",
+          "settings": {
+            "collection": "weatherproof-coats",
+            "title": "Weatherproof Coats",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "collection_CDrHwQ",
+        "collection_WYMJdB",
+        "collection_7tkGkx",
+        "collection_APEJRN",
+        "collection_TmiVYB",
+        "collection_hW9BVq",
+        "collection_t3Gjnx",
+        "collection_BeJjmz"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-size: 22px;}"
+      ],
+      "name": "Collection list",
+      "settings": {
+        "title": "ULUBIONE KOLEKCJE — TERAZ RABATY AŻ DO 60%",
+        "divider": false,
+        "per_row": 4,
+        "enable_gutter": true
+      }
+    },
+    "faq_K7V8Pg": {
+      "type": "faq",
+      "blocks": {
+        "question_eCeqhb": {
+          "type": "question",
+          "settings": {
+            "title": "Jak można się z nami skontaktować?",
+            "text": "<p>Chętnie pomożemy w doborze rozmiaru, kwestiach związanych z dostawą oraz odpowiemy na pytania dotyczące zamówienia.</p><p>Wystarczy odwiedzić naszą&nbsp;<strong>stronę kontaktową</strong>&nbsp;i wysłać wiadomość. W przypadku istniejącego zamówienia prosimy o podanie&nbsp;<strong>numeru zamówienia</strong>, abyśmy mogli szybciej pomóc.</p>"
+          }
+        },
+        "question_GmBtYt": {
+          "type": "question",
+          "settings": {
+            "title": "Czy można zmienić lub anulować zamówienie?",
+            "text": "<p>Jeśli zmienili Państwo zdanie lub zauważyli błąd, prosimy o&nbsp;<strong>jak najszybszy kontakt</strong>&nbsp;z podaniem numeru zamówienia i informacji o potrzebnej zmianie.</p><p>Dołożymy wszelkich starań, aby pomóc. Zmiana lub anulowanie może jednak nie być możliwe, jeśli zamówienie jest już przygotowywane lub zostało wysłane.</p>"
+          }
+        },
+        "question_KzCxXL": {
+          "type": "question",
+          "settings": {
+            "title": "Jak długo trzeba czekać na dostawę zamówienia?",
+            "text": "<p>Przygotowanie zamówienia zajmuje&nbsp;<strong>1–3 dni robocze</strong>, a dostawa kolejne&nbsp;<strong>5–8 dni roboczych</strong>. Łączny czas oczekiwania wynosi zazwyczaj&nbsp;<strong>6–11 dni roboczych</strong>.</p><p>Szczegółowe informacje znajdą Państwo na naszej stronie&nbsp;<strong>Informacje o dostawie</strong>.</p>"
+          }
+        },
+        "question_Wj6zaX": {
+          "type": "question",
+          "settings": {
+            "title": "Czy oferują Państwo darmową dostawę?",
+            "text": "<p>Tak! Oferujemy&nbsp;<strong>darmową dostawę przy każdym zamówieniu, bez minimalnej kwoty zakupu</strong>.</p><p>To nasz sposób, aby podziękować Państwu za zakupy w&nbsp;<strong>Butik Heleny Kraków</strong>.</p>"
+          }
+        },
+        "question_LwMpbE": {
+          "type": "question",
+          "settings": {
+            "title": "Jak można śledzić zamówienie?",
+            "text": "<p>Po wysłaniu zamówienia otrzymają Państwo wiadomość e-mail z&nbsp;<strong>numerem śledzenia przesyłki</strong>.</p><p>Aktualny status dostawy można również sprawdzić na naszej stronie w sekcji&nbsp;<strong>Śledź zamówienie</strong>.</p><p>W razie pytań prosimy o&nbsp;<strong>kontakt</strong>&nbsp;z podaniem numeru zamówienia.</p>"
+          }
+        },
+        "question_JY4bYR": {
+          "type": "question",
+          "settings": {
+            "title": "Jak wybrać odpowiedni rozmiar?",
+            "text": "<p>Nasze ubrania mają&nbsp;<strong>standardową rozmiarówkę</strong>. Przy każdym produkcie znajdą Państwo szczegółową&nbsp;<strong>tabelę rozmiarów</strong>, która pomoże wybrać odpowiedni rozmiar i zapewnić wygodne dopasowanie.</p>"
+          }
+        },
+        "question_4jGjhq": {
+          "type": "question",
+          "settings": {
+            "title": "Jakie są zasady zwrotów?",
+            "text": "<p>Zakup nie spełnił Państwa oczekiwań? Bez obaw!</p><p>Mogą Państwo zwrócić zamówienie w ciągu&nbsp;<strong>30 dni od jego otrzymania</strong>. Dbamy o to, aby cały proces był prosty i przebiegał sprawnie.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_eCeqhb",
+        "question_GmBtYt",
+        "question_KzCxXL",
+        "question_Wj6zaX",
+        "question_LwMpbE",
+        "question_JY4bYR",
+        "question_4jGjhq"
+      ],
+      "custom_css": [
+        "h2,.collapsible-trigger,strong,b {color: #303030 !important;}",
+        ".collapsible-trigger {position: relative; width: 100%; padding: 24px 35px 24px 0 !important; border-bottom: 1px solid #d0d0d0 !important; text-align: left; font-weight: 700;}",
+        ".collapsible-trigger__icon {left: auto !important; right: 0 !important; border: 0 !important; background: none !important;}",
+        ".collapsible-trigger__icon:before {border: 0 !important;}",
+        ".collapsible-content__inner {padding: 18px 0 !important;}"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "NAJCZĘŚCIEJ ZADAWANE PYTANIA"
+      }
+    },
+    "179069279829c3c6e9": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a930d6f_LiaF3G": {
+          "type": "ai_gen_block_a930d6f",
+          "settings": {
+            "desktop_width_percent": 100,
+            "line_color": "#d0d0d0",
+            "thickness": 1,
+            "line_style": "solid",
+            "vertical_spacing": 15
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5a00a50_zJqJMr": {
+          "type": "ai_gen_block_5a00a50",
+          "settings": {
+            "custom_liquid": "<style>\n  .susans-usps {\n    width: 100%;\n    background: #FFFFFF;\n    padding: 38px 40px 32px;\n    box-sizing: border-box;\n  }\n\n  .susans-usps__grid {\n    width: 100%;\n    max-width: 1400px;\n    margin: 0 auto;\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    column-gap: 40px;\n    row-gap: 40px;\n  }\n\n  .susans-usps__item {\n    text-align: center;\n    min-width: 0;\n  }\n\n  .susans-usps__icon {\n    width: 94px;\n    height: 94px;\n    border-radius: 50%;\n    margin: 0 auto 10px;\n    background: #303030;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .susans-usps__icon svg {\n    width: 42px;\n    height: 42px;\n    stroke: #FFFFFF;\n    fill: none;\n    stroke-width: 1.45;\n    stroke-linecap: round;\n    stroke-linejoin: round;\n  }\n\n  .susans-usps__title {\n    margin: 0;\n    color: #000000;\n    font-family: \"Outfit\", sans-serif;\n    font-size: 20px;\n    font-weight: 400;\n    letter-spacing: .3px;\n    line-height: 1.2;\n    text-transform: uppercase;\n  }\n\n  /* TABLET */\n  @media screen and (max-width: 989px) {\n    .susans-usps {\n      padding: 34px 24px 30px;\n    }\n\n    .susans-usps__grid {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      column-gap: 40px;\n      row-gap: 50px;\n    }\n  }\n\n  /* MOBILE */\n  @media screen and (max-width: 749px) {\n    .susans-usps {\n      padding: 28px 12px 26px;\n    }\n\n    .susans-usps__grid {\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      column-gap: 16px;\n      row-gap: 42px;\n    }\n\n    .susans-usps__icon {\n      width: 76px;\n      height: 76px;\n      margin-bottom: 9px;\n    }\n\n    .susans-usps__icon svg {\n      width: 34px;\n      height: 34px;\n    }\n\n    .susans-usps__title {\n      font-size: 14px;\n      letter-spacing: .2px;\n    }\n  }\n</style>\n\n<div class=\"susans-usps\">\n  <div class=\"susans-usps__grid\">\n\n    <!-- INSPIROWANE KRAKOWEM -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <path d=\"M8 51h48\"/>\n          <path d=\"M13 51V30h38v21\"/>\n          <path d=\"M19 30V20h9v10\"/>\n          <path d=\"M36 30V20h9v10\"/>\n          <path d=\"M18 20l5.5-9 5.5 9\"/>\n          <path d=\"M35 20l5.5-9 5.5 9\"/>\n          <path d=\"M29 51V39a3 3 0 0 1 6 0v12\"/>\n          <path d=\"M18 37h6v7h-6z\"/>\n          <path d=\"M40 37h6v7h-6z\"/>\n        </svg>\n      </div>\n      <p class=\"susans-usps__title\">\n        Inspirowane Krakowem\n      </p>\n    </div>\n\n    <!-- DARMOWA DOSTAWA -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <path d=\"M6 23h15\"/>\n          <path d=\"M4 29h14\"/>\n          <path d=\"M8 35h10\"/>\n          <path d=\"M20 18h24v25H20\"/>\n          <path d=\"M44 27h7l7 9v7H44\"/>\n          <path d=\"M25 23h13\"/>\n          <circle cx=\"28\" cy=\"46\" r=\"3.5\"/>\n          <circle cx=\"51\" cy=\"46\" r=\"3.5\"/>\n        </svg>\n      </div>\n      <p class=\"susans-usps__title\">\n        Darmowa Dostawa\n      </p>\n    </div>\n\n    <!-- 30 DNI NA ZWROT -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <path d=\"M8 16h8l5 29h28\"/>\n          <path d=\"M19 22h36l-6 20H23z\"/>\n          <path d=\"M28 22l2 20\"/>\n          <path d=\"M38 22v20\"/>\n          <path d=\"M48 22l-3 20\"/>\n          <circle cx=\"28\" cy=\"50\" r=\"3\"/>\n          <circle cx=\"46\" cy=\"50\" r=\"3\"/>\n        </svg>\n      </div>\n      <p class=\"susans-usps__title\">\n        30 Dni Na Zwrot\n      </p>\n    </div>\n\n    <!-- BEZPIECZNE PŁATNOŚCI -->\n    <div class=\"susans-usps__item\">\n      <div class=\"susans-usps__icon\">\n        <svg viewBox=\"0 0 64 64\" aria-hidden=\"true\">\n          <rect x=\"12\" y=\"22\" width=\"40\" height=\"28\" rx=\"2\"/>\n          <path d=\"M18 22l27-8 3 8\"/>\n          <path d=\"M21 22l22-5\"/>\n          <path d=\"M42 31h14v11H42a5.5 5.5 0 0 1 0-11z\"/>\n          <circle cx=\"47\" cy=\"36.5\" r=\"1.2\"/>\n        </svg>\n      </div>\n      <p class=\"susans-usps__title\">\n        Bezpieczne Płatności\n      </p>\n    </div>\n\n  </div>\n</div>",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a930d6f_LiaF3G",
+        "ai_gen_block_5a00a50_zJqJMr"
+      ],
+      "settings": {}
+    },
+    "feature_pro_QdXhN7": {
+      "type": "feature-pro",
+      "blocks": {
+        "slide_tFRtPi": {
+          "type": "slide",
+          "settings": {
+            "icon": "worldwide",
+            "title": "<h3>FREE SHIPPING</h3>",
+            "text": "<p>We are offering free shipping only today. All orders ship with UPS and include full tracking.</p>"
+          }
+        },
+        "slide_tcXgmA": {
+          "type": "slide",
+          "settings": {
+            "icon": "time",
+            "title": "<h3>Easy returns</h3>",
+            "text": "<p>You have 30 days after receiving your order to return or exchange it.</p>"
+          }
+        },
+        "slide_nRF8rD": {
+          "type": "slide",
+          "settings": {
+            "icon": "chat-dots",
+            "title": "<h3>24/7 CUSTOMER SERVICE</h3>",
+            "text": "<p>We are always available, providing fast and personalized support, ensuring an exceptional customer experience with professionalism and reliability.</p>"
+          }
+        },
+        "slide_d9jF4e": {
+          "type": "slide",
+          "settings": {
+            "icon": "payment",
+            "title": "<h3>SSL Ecryption for safe and secure payments</h3>",
+            "text": "<p>SSL-secured Shop Pay, Apple Pay,  Credit Card payments.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tFRtPi",
+        "slide_tcXgmA",
+        "slide_nRF8rD",
+        "slide_d9jF4e"
+      ],
+      "disabled": true,
+      "name": "Feature Pro",
+      "settings": {
+        "stack_on_mobile": true,
+        "center_on_desktop": true,
+        "items": 4,
+        "items_tablet": 2,
+        "icon_size": 48,
+        "title_size": 22,
+        "text_size": 14,
+        "title_color": "#000000",
+        "text_color": "#000000",
+        "icon_color": "#000000",
+        "pagination_color": "#000000",
+        "background-color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "1790691936f2880f04",
+    "slideshow_XGpN3P",
+    "blocks_gU6GJr",
+    "rich_text_Agx4tL",
+    "1790774330ca5b968e",
+    "blocks_i9Wixp",
+    "featured_collection_qLQGbj",
+    "text_and_image_EpC6dy",
+    "background_image_text_cfE8ir",
+    "blocks_gxJVdb",
+    "featured_collection_3ALpBb",
+    "text_columns_YnQVDV",
+    "featured_collections_V69yeg",
+    "faq_K7V8Pg",
+    "179069279829c3c6e9",
+    "feature_pro_QdXhN7"
+  ]
+}
